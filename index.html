@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Proyecto Profesional</title>
+
+  <style>
+    :root {
+      --color-primario: #FFCF15;
+      --color-secundario: #00477A;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: var(--color-secundario);
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      gap: 1.5rem;
+    }
+
+    .boton {
+      background-color: var(--color-primario);
+      color: #000;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: #e6b800;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    input[type="text"] {
+      padding: 0.5rem;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: var(--color-secundario);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      input[type="text"] {
+        width: 100%;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .boton {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Mi Proyecto de Algoritmos</h1>
+  </header>
+
+  <main>
+    <button class="boton" onclick="miprimeralgoritmo()">Ejecutar 'Hola Mundo'</button>
+
+    <div class="input-group">
+      <input type="text" id="inputBinario" placeholder="Ingresa número binario (ej. 1101)" />
+      <button class="boton" onclick="convertirBinario()">Convertir a Decimal</button>
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="inputBin1" placeholder="Binario 1 (ej. 1010)" />
+      <input type="text" id="inputBin2" placeholder="Binario 2 (ej. 1101)" />
+      <button class="boton" onclick="sumarBinarios()">Sumar Binarios</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Desarrollado por Francisco Javier. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Importar el archivo con tus funciones -->
+  <script src="aprendiendo.js"></script>
+
+  <!-- Lógica adicional para vincular botones -->
+  <script>
+  // Funciones auxiliares que usan las del archivo externo
+    function convertirBinario() {
+        const binario = document.getElementById("inputBinario").value.trim();
+        if (/^[01]+$/.test(binario)) {
+            const resultado = BinarioADecimal(binario);
+            alert(`El número decimal es: ${resultado}`);
+    } else {
+      alert("Por favor ingresa un número binario válido (solo 0 y 1).");
+    }
+  }
+  function sumarBinarios() {
+    const bin1 = document.getElementById("inputBin1").value.trim();
+    const bin2 = document.getElementById("inputBin2").value.trim();
+
+    if (!/^[01]+$/.test(bin1) || !/^[01]+$/.test(bin2)) {
+      alert("Ambos valores deben ser números binarios válidos.");
+      return;
+    }
+
+    const resultado = sumarbinario(bin1, bin2);
+    alert(`La suma de los binarios en decimal es: ${resultado}`);
+  }
+</script>
+</body>
+</html>
