@@ -1,0 +1,84 @@
+:root {
+  --color-primario: #FFCF15;
+  --color-secundario: #00477A;
+  --color-texto: #333;
+  --fondo: #f9f9f9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--fondo);
+  color: var(--color-texto);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--color-secundario);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+.input-section {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--color-secundario);
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+button {
+  background-color: var(--color-primario);
+  border: none;
+  color: #000;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e0b615;
+}
+
+.resultado {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+footer {
+  background-color: var(--color-secundario);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
