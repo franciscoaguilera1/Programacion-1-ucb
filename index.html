@@ -1,60 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html leng="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Analizador de Texto</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <title>Ejemplo con onclick</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <header>
-    <h1>Analizador de Texto</h1>
-  </header>
-
-  <main>
-    <section class="analyzer">
-      <label for="textoInput">Introduce tu texto:</label>
-      <textarea id="textoInput" rows="5" placeholder="Escribe aquí..."></textarea>
-
-      <div class="buttons">
-        <button onclick="ejecutarFuncion('vocales')">Contar Vocales</button>
-        <button onclick="ejecutarFuncion('palabras')">Contar Palabras</button>
-        <button onclick="ejecutarFuncion('caracteres')">Contar Caracteres</button>
-      </div>
-
-      <div class="resultado" id="resultado">
-        <!-- Resultado se mostrará aquí -->
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Analizador de Texto. Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- Tu archivo con funciones -->
-  <script src="cadenas.js"></script>
-
-  <!-- Script para ejecutar funciones -->
-  <script>
-    function ejecutarFuncion(tipo) {
-      const texto = document.getElementById('textoInput').value;
-      let resultado = '';
-
-      switch (tipo) {
-        case 'vocales':
-          resultado = `Vocales: ${ContarVocales(texto)}`;
-          break;
-        case 'palabras':
-          resultado = `Palabras: ${ContarPalabras(texto)}`;
-          break;
-        case 'caracteres':
-          resultado = `Caracteres: ${ContarCaracteres(texto)}`;
-          break;
-      }
-
-      document.getElementById('resultado').textContent = resultado;
-    }
-  </script>
+    <h2>¿Cuál es tu nombre?</h2>
+    <input type="text" id="nombre" placeholder="Escribe tu nombre aqui" /><br>
+    <button onclick="mostrarNombre()">Mostrar</button><br>
+    <button onclick="InsertarLista()">Mostrar Lista</button>
+    <div id="resultado" class="lista-botones"></div>
+    <script src="funciones.js"></script>
 </body>
 </html>
